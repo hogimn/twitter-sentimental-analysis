@@ -7,6 +7,9 @@ mainClassName = "io.collective.start.analyzer.AppKt"
 dependencies {
     implementation project(":components:data-analyzer")
     implementation project(":components:workflow-support")
+    implementation project(":components:database-support")
+    implementation project(path: ':components:rabbitmq-support')
+    implementation project(path: ':components:tweets')
 }
 
 tasks.withType(Copy).all {
@@ -20,5 +23,8 @@ jar {
     }
     from {
         configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }
+
+apply from: 'build-config.gradle'

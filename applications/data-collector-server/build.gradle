@@ -7,6 +7,10 @@ mainClassName = "io.collective.start.collector.AppKt"
 dependencies {
     implementation project(":components:data-collector")
     implementation project(":components:workflow-support")
+    implementation project(path: ':components:rest-support')
+    implementation project(path: ':components:database-support')
+    implementation project(path: ':components:tweets')
+    implementation project(path: ':components:rabbitmq-support')
 }
 
 tasks.withType(Copy).all {
@@ -20,5 +24,6 @@ jar {
     }
     from {
         configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }

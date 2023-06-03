@@ -9,6 +9,9 @@ import kotlin.test.assertTrue
 
 
 class AppTest {
+    private val testJdbcUrl = ""
+    private val testDbUsername = ""
+    private val testDbPassword = ""
 
     @Test
     fun testEmptyHome() = testApp {
@@ -19,6 +22,6 @@ class AppTest {
     }
 
     private fun testApp(callback: TestApplicationEngine.() -> Unit) {
-        withTestApplication({ module() }) { callback() }
+        withTestApplication({ module(testJdbcUrl, testDbUsername, testDbPassword) }) { callback() }
     }
 }

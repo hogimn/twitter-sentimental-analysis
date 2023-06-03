@@ -17,16 +17,16 @@ jobs:
         run: ./gradlew build
   google-container:
     runs-on: ubuntu-latest
-    needs: [test]
+    needs: [ test ]
     permissions:
       contents: 'read'
       id-token: 'write'
     steps:
       - uses: actions/checkout@v3
-#      - name: 'authenticate to google cloud'
-#        uses: 'google-github-actions/auth@v0'
-#        with:
-#          credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
+      #      - name: 'authenticate to google cloud'
+      #        uses: 'google-github-actions/auth@v0'
+      #        with:
+      #          credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
       - name: 'set up cloud sdk'
         uses: 'google-github-actions/setup-gcloud@v0'
       - id: 'gcloud'
@@ -35,13 +35,13 @@ jobs:
           echo "gcloud"
   google-deploy-basic-server:
     runs-on: ubuntu-latest
-    needs: [google-container]
+    needs: [ google-container ]
     steps:
       - uses: actions/checkout@v3
-#      - name: 'authenticate to google cloud'
-#        uses: 'google-github-actions/auth@v0'
-#        with:
-#          credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
+      #      - name: 'authenticate to google cloud'
+      #        uses: 'google-github-actions/auth@v0'
+      #        with:
+      #          credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
       - name: 'set up cloud sdk'
         uses: 'google-github-actions/setup-gcloud@v0'
       - id: 'gcloud'
@@ -50,13 +50,13 @@ jobs:
           echo "gcloud"
   google-deploy-data-analyzer:
     runs-on: ubuntu-latest
-    needs: [google-container]
+    needs: [ google-container ]
     steps:
       - uses: actions/checkout@v3
-#      - name: 'authenticate to google cloud'
-#        uses: 'google-github-actions/auth@v0'
-#        with:
-#          credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
+      #      - name: 'authenticate to google cloud'
+      #        uses: 'google-github-actions/auth@v0'
+      #        with:
+      #          credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
       - name: 'set up cloud sdk'
         uses: 'google-github-actions/setup-gcloud@v0'
       - id: 'gcloud'
@@ -65,13 +65,13 @@ jobs:
           echo "gcloud"
   google-deploy-data-collector:
     runs-on: ubuntu-latest
-    needs: [google-container]
+    needs: [ google-container ]
     steps:
       - uses: actions/checkout@v3
-#      - name: 'authenticate to google cloud'
-#        uses: 'google-github-actions/auth@v0'
-#        with:
-#          credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
+      #      - name: 'authenticate to google cloud'
+      #        uses: 'google-github-actions/auth@v0'
+      #        with:
+      #          credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
       - name: 'set up cloud sdk'
         uses: 'google-github-actions/setup-gcloud@v0'
       - id: 'gcloud'

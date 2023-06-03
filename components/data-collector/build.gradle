@@ -1,5 +1,14 @@
 version '1.0-SNAPSHOT'
 
+processTestResources {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
 dependencies {
     implementation project(":components:workflow-support")
+    implementation project(path: ':components:rest-support')
+    implementation project(path: ':components:tweets')
+    implementation project(path: ':components:rss-support')
+    implementation project(path: ':components:database-support')
+    testImplementation project(path: ':components:test-support')
 }

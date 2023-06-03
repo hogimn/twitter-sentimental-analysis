@@ -1,0 +1,7 @@
+version "1.0-SNAPSHOT"
+
+dependencies {
+    implementation project(":components:rest-support")
+    implementation project(path: ':components:database-support')
+    implementation project(path: ':components:test-support')
+}

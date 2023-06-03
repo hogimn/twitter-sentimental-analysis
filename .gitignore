@@ -8,3 +8,5 @@ out
 .DS_Store
 .env*
 .freshcloud
+private.properties
+.docker-data

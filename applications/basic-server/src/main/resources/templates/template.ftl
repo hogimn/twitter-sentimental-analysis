@@ -7,12 +7,12 @@
         <link rel="stylesheet" href="/style/reset.css">
         <link rel="stylesheet" href="/style/style.css">
         <link rel="icon" type="image/svg" href="/favicon.svg">
-        <title>Kotlin ktor starter</title>
+        <title>Twitter Sentimental Analysis</title>
     </head>
     <body>
     <header>
         <div class="container">
-            <h1>Kotlin ktor starter</h1>
+            <h1>Twitter Sentimental Analysis</h1>
         </div>
     </header>
     <section class="callout">

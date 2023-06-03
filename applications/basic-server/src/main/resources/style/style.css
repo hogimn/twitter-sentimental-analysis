@@ -131,3 +131,45 @@ ul {
     font-family: 'Bowlby One', sans-serif;
     font-weight: 700;
 }
+
+.tweet-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tweet-item {
+    width: 100%;
+    border: 1px solid #d5d5e8;
+    background-color: #faf6ff;
+}
+
+.tweet-author {
+    padding: 10px;
+    font-weight: bold;
+    background-color: #7F7FFF;
+    color: var(--white);
+}
+
+.tweet-pubdate {
+    padding: 10px;
+    font-style: italic;
+}
+
+.tweet-description {
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.tweet-sentiment {
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.tweet-description img,
+.tweet-description video {
+    display: block;
+    padding: 10px;
+    margin: 0 auto;
+    width: 100%;
+}

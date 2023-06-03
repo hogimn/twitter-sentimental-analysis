@@ -7,6 +7,8 @@ mainClassName = "io.collective.start.AppKt"
 dependencies {
     implementation "io.ktor:ktor-freemarker:$ktor_version"
     implementation "io.ktor:ktor-jackson:$ktor_version"
+    implementation project(path: ':components:data-analyzer')
+    implementation project(path: ':components:rabbitmq-support')
 }
 
 tasks.withType(Copy).all {

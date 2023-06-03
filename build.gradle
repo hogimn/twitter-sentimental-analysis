@@ -2,6 +2,9 @@ buildscript {
     ext.kotlin_version = '1.6.21'
     ext.ktor_version = '1.6.8'
     ext.mockk_version = '1.10.6'
+    ext.rabbitmq_version = '5.7.3'
+    ext.jackson_version = '2.12.0'
+    ext.openai_version = '0.12.0'
 
     repositories {
         mavenCentral()
@@ -36,9 +39,24 @@ subprojects {
 
         implementation "ch.qos.logback:logback-classic:1.2.3"
 
+        implementation "com.fasterxml.jackson.core:jackson-core:$jackson_version"
+        implementation "com.fasterxml.jackson.core:jackson-databind:$jackson_version"
+        implementation "com.fasterxml.jackson.core:jackson-annotations:$jackson_version"
+        implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:$jackson_version"
+        implementation "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jackson_version"
+        implementation "com.fasterxml.jackson.module:jackson-module-kotlin:$jackson_version"
+
+        implementation "com.theokanning.openai-gpt3-java:service:$openai_version"
+        implementation "com.theokanning.openai-gpt3-java:client:$openai_version"
+        implementation "com.theokanning.openai-gpt3-java:api:$openai_version"
+
+        implementation "com.rabbitmq:amqp-client:$rabbitmq_version"
+
         testImplementation "io.ktor:ktor-server-test-host:$ktor_version"
         testImplementation group: 'junit', name: 'junit', version: '4.12'
         testImplementation "io.mockk:mockk:$mockk_version"
+        testImplementation "org.mockito:mockito-core:3.3.0"
+        testImplementation "com.nhaarman:mockito-kotlin:1.6.0"
         testImplementation "org.awaitility:awaitility:4.0.3"
         testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
     }
